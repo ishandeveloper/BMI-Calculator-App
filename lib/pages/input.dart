@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/widgets/cardiconcontent.dart';
 import 'package:bmi_calculator/widgets/customcard.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -25,25 +26,17 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 BMICard(
                   colour: cardColor,
-                  cardChild: Column(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.male,
-                        size: 80,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        'MALE',
-                        style:
-                            TextStyle(fontSize: 18, color: Color(0xFF8D8E98)),
-                      )
-                    ],
+                  cardChild: CardIconContent(
+                    cardicon: FontAwesomeIcons.mars,
+                    cardtext: 'MALE',
                   ),
                 ),
                 BMICard(
                   colour: cardColor,
+                  cardChild: CardIconContent(
+                    cardicon: FontAwesomeIcons.female,
+                    cardtext: 'FEMALE',
+                  ),
                 ),
               ],
             ),
