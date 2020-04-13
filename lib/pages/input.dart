@@ -1,4 +1,3 @@
-import 'package:bmi_calculator/pages/about.dart';
 import 'package:bmi_calculator/pages/analysis.dart';
 import 'package:bmi_calculator/widgets/buttons.dart';
 import 'package:bmi_calculator/widgets/cardiconcontent.dart';
