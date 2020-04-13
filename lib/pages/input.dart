@@ -31,9 +31,9 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        maleCardColor=activeCardColor;
-                        femaleCardColor=inactiveCardColor;
-                        gender=0;
+                        maleCardColor = activeCardColor;
+                        femaleCardColor = inactiveCardColor;
+                        gender = 0;
                       });
                     },
                     child: BMICard(
@@ -49,12 +49,12 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        maleCardColor=inactiveCardColor;
-                        femaleCardColor=activeCardColor;
-                        gender=1;
+                        maleCardColor = inactiveCardColor;
+                        femaleCardColor = activeCardColor;
+                        gender = 1;
                       });
                     },
-                                      child: BMICard(
+                    child: BMICard(
                       colour: femaleCardColor,
                       cardChild: CardIconContent(
                         cardicon: FontAwesomeIcons.female,
