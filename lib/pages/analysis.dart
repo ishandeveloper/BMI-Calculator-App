@@ -3,9 +3,9 @@ import 'package:bmi_calculator/widgets/customcard.dart';
 import 'package:flutter/material.dart';
 
 class AnalysisPage extends StatelessWidget {
-  final double bmiValue;
-
-  AnalysisPage({this.bmiValue});
+  final String bmiValue;
+  final String bmiComment;
+  AnalysisPage({this.bmiValue,this.bmiComment});
 
   @override
   Widget build(BuildContext context) {
@@ -52,14 +52,22 @@ class AnalysisPage extends StatelessWidget {
                 child: BMICard(
                   colour: activeCardColor,
                   cardChild: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text('Your BMI Index is',style:cardtextstyle,textAlign: TextAlign.center,),
-                      Text(bmiValue.toString(),style:boldCardHeadings.copyWith(fontSize: 72),textAlign: TextAlign.center,),
-                      Text(bmiValue>=19?"You're normal":"You're obese",style: cardtextstyle,textAlign: TextAlign.center,)
+                      SizedBox(height: 20,),
+                      Text('Analysis Complete',style: boldCardHeadings.copyWith(fontSize:18,fontWeight: FontWeight.w300),),
+                      Expanded(
+                                              child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text('Your BMI Index is',style:cardtextstyle,textAlign: TextAlign.center,),
+                            Text(bmiValue,style:boldCardHeadings.copyWith(fontSize: 72),textAlign: TextAlign.center,),
+                            Text("You're "+bmiComment,style: cardtextstyle,textAlign: TextAlign.center,)
+                          ],
+                          
+                        ),
+                      ),
                     ],
-                    
                   ),
                 ),
               ),
@@ -91,7 +99,7 @@ class AnalysisPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    color: Colors.yellow[500],
+                    color: Colors.red[500],
                     height: MediaQuery.of(context).size.height * 0.095,
                   ),
                 ),
