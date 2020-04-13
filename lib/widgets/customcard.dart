@@ -6,7 +6,7 @@ class BMICard extends StatelessWidget {
   // }) : super(key: key);
   BMICard({@required this.colour});
   final Color colour;
-
+  final Widget cardChild;
 
   @override
   Widget build(BuildContext context) {
