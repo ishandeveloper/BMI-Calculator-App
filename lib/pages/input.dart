@@ -32,16 +32,31 @@ class _InputPageState extends State<InputPage> {
             colour: Color(0xFF1D1E33),
           ),
           Expanded(
-              child: Row(
-            children: <Widget>[
-              BMICard(
-                colour: Color(0xFF1D1E33),
-              ),
-              BMICard(
-                colour: Color(0xFF1D1E33),
-              ),
-            ],
-          )),
+            child: Row(
+              children: <Widget>[
+                BMICard(
+                  colour: Color(0xFF1D1E33),
+                ),
+                BMICard(
+                  colour: Color(0xFF1D1E33),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: MaterialButton(
+                    onPressed: () {},
+                    color: Colors.yellow[500],
+                    height: MediaQuery.of(context).size.height * 0.095,
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
