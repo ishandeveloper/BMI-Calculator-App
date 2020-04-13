@@ -8,12 +8,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../constants.dart';
 import 'package:bmi_calculator/calculations.dart';
 
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
+   
   Gender selectedGender;
   int height = 150;
   int weight = 60;
@@ -45,7 +47,7 @@ class _InputPageState extends State<InputPage> {
           Container(
             margin: EdgeInsets.only(right: 20),
             child: GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pushNamed(context, '/about');
               },
               child: Icon(Icons.info),
@@ -233,8 +235,15 @@ class _InputPageState extends State<InputPage> {
                           fontWeight: FontWeight.w300),
                     ),
                     onPressed: () {
-                      Calculations calc=Calculations(height: height,weight: weight);
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AnalysisPage(bmiValue: calc.calculateBMI(),bmiComment: calc.getResult(),)));
+                      Calculations calc =
+                          Calculations(height: height, weight: weight);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AnalysisPage(
+                                    bmiValue: calc.calculateBMI(),
+                                    bmiComment: calc.getResult(),
+                                  )));
                     },
                     color: Colors.yellow[500],
                     height: MediaQuery.of(context).size.height * 0.095,
