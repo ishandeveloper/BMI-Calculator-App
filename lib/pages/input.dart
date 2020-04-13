@@ -19,17 +19,27 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: <Widget>[
-                BMICard(),
-                BMICard()
+                BMICard(
+                  colour: Color(0xFF1D1E33),
+                ),
+                BMICard(
+                  colour: Color(0xFF1D1E33),
+                ),
               ],
             ),
           ),
-          BMICard(),
+          BMICard(
+            colour: Color(0xFF1D1E33),
+          ),
           Expanded(
               child: Row(
             children: <Widget>[
-              BMICard(),
-              BMICard()
+              BMICard(
+                colour: Color(0xFF1D1E33),
+              ),
+              BMICard(
+                colour: Color(0xFF1D1E33),
+              ),
             ],
           )),
         ],
@@ -37,4 +47,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
