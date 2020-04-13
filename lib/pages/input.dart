@@ -35,6 +35,14 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
         elevation: 0,
+        actions: <Widget>[
+          Container(
+            margin: EdgeInsets.only(right:20),
+            child: GestureDetector(
+              child: Icon(Icons.info),
+            ),
+          )
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
