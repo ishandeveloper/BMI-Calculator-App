@@ -7,6 +7,9 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  // final cardColor=Color(0xFF1D1E33);
+  final cardColor = Color(0xFF1D1E33);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,25 +23,25 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 BMICard(
-                  colour: Color(0xFF1D1E33),
+                  colour: cardColor,
                 ),
                 BMICard(
-                  colour: Color(0xFF1D1E33),
+                  colour: cardColor,
                 ),
               ],
             ),
           ),
           BMICard(
-            colour: Color(0xFF1D1E33),
+            colour: cardColor,
           ),
           Expanded(
             child: Row(
               children: <Widget>[
                 BMICard(
-                  colour: Color(0xFF1D1E33),
+                  colour: cardColor,
                 ),
                 BMICard(
-                  colour: Color(0xFF1D1E33),
+                  colour: cardColor,
                 ),
               ],
             ),
@@ -49,10 +52,13 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: MaterialButton(
-                    child: Text('CALCULATE BMI',style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18
-                    ),),
+                    child: Text(
+                      'CALCULATE BMI',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w300),
+                    ),
                     onPressed: () {},
                     color: Colors.yellow[500],
                     height: MediaQuery.of(context).size.height * 0.095,
