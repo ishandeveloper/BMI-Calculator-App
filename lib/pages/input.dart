@@ -6,6 +6,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 const activeCardColor = Color(0xFF1D1E33);
 const inactiveCardColor = Color(0xFF111328);
 
+enum Gender{
+  male,
+  female
+}
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -14,7 +19,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color maleCardColor = inactiveCardColor;
   Color femaleCardColor = inactiveCardColor;
-  int gender;
+  Gender gender;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +38,7 @@ class _InputPageState extends State<InputPage> {
                       setState(() {
                         maleCardColor = activeCardColor;
                         femaleCardColor = inactiveCardColor;
-                        gender = 0;
+                        gender = Gender.male;
                       });
                     },
                     child: BMICard(
@@ -51,13 +56,13 @@ class _InputPageState extends State<InputPage> {
                       setState(() {
                         maleCardColor = inactiveCardColor;
                         femaleCardColor = activeCardColor;
-                        gender = 1;
+                        gender = Gender.female;
                       });
                     },
                     child: BMICard(
                       colour: femaleCardColor,
                       cardChild: CardIconContent(
-                        cardicon: FontAwesomeIcons.female,
+                        cardicon: FontAwesomeIcons.venus,
                         cardtext: 'FEMALE',
                       ),
                     ),
