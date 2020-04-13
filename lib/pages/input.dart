@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/widgets/buttons.dart';
 import 'package:bmi_calculator/widgets/cardiconcontent.dart';
 import 'package:bmi_calculator/widgets/customcard.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 150;
+  int weight = 60;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +40,7 @@ class _InputPageState extends State<InputPage> {
         elevation: 0,
         actions: <Widget>[
           Container(
-            margin: EdgeInsets.only(right:20),
+            margin: EdgeInsets.only(right: 20),
             child: GestureDetector(
               child: Icon(Icons.info),
             ),
@@ -108,11 +111,16 @@ class _InputPageState extends State<InputPage> {
                   ),
                   SliderTheme(
                     data: SliderThemeData(
-                      thumbShape: RoundSliderThumbShape(
-                        enabledThumbRadius: 15,
-                        disabledThumbRadius: 10,
-                      ),
-                    ),
+                        thumbShape: RoundSliderThumbShape(
+                          enabledThumbRadius: 15,
+                          disabledThumbRadius: 10,
+                        ),
+                        overlayShape:
+                            RoundSliderOverlayShape(overlayRadius: 30),
+                        thumbColor: Colors.yellow,
+                        overlayColor: Color(0x25EB1555),
+                        activeTrackColor: Colors.yellow,
+                        inactiveTrackColor: inactiveCardColor),
                     child: Slider(
                       onChanged: (val) {
                         setState(() {
@@ -122,7 +130,7 @@ class _InputPageState extends State<InputPage> {
                       min: 60,
                       value: height.toDouble(),
                       max: 240,
-                      activeColor: Colors.yellow,
+                      // activeColor: Colors.yellow,
                     ),
                   )
                 ],
@@ -135,6 +143,36 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: BMICard(
                     colour: activeCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'WEIGHT',
+                          style: cardtextstyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: boldCardHeadings,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            CustomIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              pressed: () => setState(() {
+                                weight--;
+                              }),
+                            ),
+                            CustomIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              pressed: () => setState(() {
+                                weight++;
+                              }),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
