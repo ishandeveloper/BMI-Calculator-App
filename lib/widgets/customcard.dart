@@ -10,14 +10,12 @@ class BMICard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        child: cardChild,
-        margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: colour,
-          borderRadius: BorderRadius.circular(20),
-        ),
+    return Container(
+      child: cardChild,
+      margin: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: colour,
+        borderRadius: BorderRadius.circular(20),
       ),
     );
   }

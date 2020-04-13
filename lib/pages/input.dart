@@ -3,14 +3,17 @@ import 'package:bmi_calculator/widgets/customcard.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+const activeCardColor = Color(0xFF1D1E33);
+const inactiveCardColor = Color(0xFF111328);
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
-  // final cardColor=Color(0xFF1D1E33);
-  final cardColor = Color(0xFF1D1E33);
+  Color maleCardColor = inactiveCardColor;
+  Color femaleCardColor = inactiveCardColor;
 
   @override
   Widget build(BuildContext context) {
@@ -24,34 +27,60 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: <Widget>[
-                BMICard(
-                  colour: cardColor,
-                  cardChild: CardIconContent(
-                    cardicon: FontAwesomeIcons.mars,
-                    cardtext: 'MALE',
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        maleCardColor=activeCardColor;
+                        femaleCardColor=inactiveCardColor;
+                      });
+                    },
+                    child: BMICard(
+                      colour: maleCardColor,
+                      cardChild: CardIconContent(
+                        cardicon: FontAwesomeIcons.mars,
+                        cardtext: 'MALE',
+                      ),
+                    ),
                   ),
                 ),
-                BMICard(
-                  colour: cardColor,
-                  cardChild: CardIconContent(
-                    cardicon: FontAwesomeIcons.female,
-                    cardtext: 'FEMALE',
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        maleCardColor=inactiveCardColor;
+                        femaleCardColor=activeCardColor;
+                      });
+                    },
+                                      child: BMICard(
+                      colour: femaleCardColor,
+                      cardChild: CardIconContent(
+                        cardicon: FontAwesomeIcons.female,
+                        cardtext: 'FEMALE',
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-          BMICard(
-            colour: cardColor,
+          Expanded(
+            child: BMICard(
+              colour: activeCardColor,
+            ),
           ),
           Expanded(
             child: Row(
               children: <Widget>[
-                BMICard(
-                  colour: cardColor,
+                Expanded(
+                  child: BMICard(
+                    colour: activeCardColor,
+                  ),
                 ),
-                BMICard(
-                  colour: cardColor,
+                Expanded(
+                  child: BMICard(
+                    colour: activeCardColor,
+                  ),
                 ),
               ],
             ),
