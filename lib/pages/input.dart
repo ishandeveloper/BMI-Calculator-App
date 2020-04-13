@@ -14,7 +14,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 150;
   int weight = 60;
-
+  int age = 18;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -178,6 +178,36 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: BMICard(
                     colour: activeCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'AGE',
+                          style: cardtextstyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: boldCardHeadings,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            CustomIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              pressed: () => setState(() {
+                                age--;
+                              }),
+                            ),
+                            CustomIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              pressed: () => setState(() {
+                                age++;
+                              }),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
