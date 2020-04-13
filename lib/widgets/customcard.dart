@@ -4,7 +4,7 @@ class BMICard extends StatelessWidget {
   // const BMICard({
   //   Key key,
   // }) : super(key: key);
-  BMICard({@required this.colour, this.cardChild,this.pressed});
+  BMICard({@required this.colour, this.cardChild, this.pressed});
   final Color colour;
   final Widget cardChild;
   final Function pressed;
@@ -12,8 +12,8 @@ class BMICard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap:pressed,
-          child: Container(
+      onTap: pressed,
+      child: Container(
         child: cardChild,
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
