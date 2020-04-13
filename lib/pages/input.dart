@@ -17,9 +17,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = inactiveCardColor;
-  Color femaleCardColor = inactiveCardColor;
-  Gender gender;
+  Gender selectedGender;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,13 +34,12 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        maleCardColor = activeCardColor;
-                        femaleCardColor = inactiveCardColor;
-                        gender = Gender.male;
+                       
+                        selectedGender = Gender.male;
                       });
                     },
                     child: BMICard(
-                      colour: maleCardColor,
+                      colour: selectedGender==Gender.male?activeCardColor:inactiveCardColor,
                       cardChild: CardIconContent(
                         cardicon: FontAwesomeIcons.mars,
                         cardtext: 'MALE',
@@ -54,13 +51,11 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        maleCardColor = inactiveCardColor;
-                        femaleCardColor = activeCardColor;
-                        gender = Gender.female;
+                        selectedGender = Gender.female;
                       });
                     },
                     child: BMICard(
-                      colour: femaleCardColor,
+                      colour: selectedGender==Gender.female?activeCardColor:inactiveCardColor,
                       cardChild: CardIconContent(
                         cardicon: FontAwesomeIcons.venus,
                         cardtext: 'FEMALE',
