@@ -49,6 +49,10 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: MaterialButton(
+                    child: Text('CALCULATE BMI',style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18
+                    ),),
                     onPressed: () {},
                     color: Colors.yellow[500],
                     height: MediaQuery.of(context).size.height * 0.095,
