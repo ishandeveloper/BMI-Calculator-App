@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/widgets/customcard.dart';
 import 'package:flutter/material.dart';
 
 class InputPage extends StatefulWidget {
@@ -18,57 +19,17 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: <Widget>[
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
+                BMICard(),
+                BMICard()
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Color(0xFF1D1E33),
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
+          BMICard(),
           Expanded(
               child: Row(
             children: <Widget>[
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Color(0xFF1D1E33),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Color(0xFF1D1E33),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              ),
+              BMICard(),
+              BMICard()
             ],
           )),
         ],
@@ -76,3 +37,4 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
+
