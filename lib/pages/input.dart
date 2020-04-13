@@ -11,6 +11,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
+  int height=150;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +62,35 @@ class _InputPageState extends State<InputPage> {
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('HEIGHT',style: cardtextstyle,)
+                  Text(
+                    'HEIGHT',
+                    style: cardtextstyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    textBaseline: TextBaseline.alphabetic,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    children: <Widget>[
+                      Text(
+                        height.toString(),
+                        style: boldCardHeadings,
+                      ),
+                      Text(
+                        'cm',
+                        style: cardtextstyle,
+                      )
+                    ],
+                  ),
+                  Slider(onChanged: (val){
+                    setState(() {
+                      height=val.toInt();
+                    });
+                  },
+                  min: 60,
+                  value:height.toDouble(),
+                  max: 240,
+                  activeColor: Colors.yellow,
+                  )
                 ],
               ),
             ),
