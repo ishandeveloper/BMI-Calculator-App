@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/pages/about.dart';
+import 'package:bmi_calculator/pages/analysis.dart';
 import 'package:bmi_calculator/widgets/buttons.dart';
 import 'package:bmi_calculator/widgets/cardiconcontent.dart';
 import 'package:bmi_calculator/widgets/customcard.dart';
@@ -44,9 +45,7 @@ class _InputPageState extends State<InputPage> {
             margin: EdgeInsets.only(right: 20),
             child: GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return AboutPage();
-                }));
+                Navigator.pushNamed(context, '/about');
               },
               child: Icon(Icons.info),
             ),
@@ -232,7 +231,9 @@ class _InputPageState extends State<InputPage> {
                           fontSize: 18,
                           fontWeight: FontWeight.w300),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AnalysisPage(bmiValue: 19,)));
+                    },
                     color: Colors.yellow[500],
                     height: MediaQuery.of(context).size.height * 0.095,
                   ),
