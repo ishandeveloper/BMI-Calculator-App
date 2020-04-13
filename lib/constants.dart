@@ -6,3 +6,4 @@ const inactiveCardColor = Color(0xFF111328);
 enum Gender { male, female }
 
 const TextStyle cardtextstyle=TextStyle(fontSize: 18, color: Color(0xFF8D8E98));
+const TextStyle boldCardHeadings=TextStyle( fontSize: 50, fontWeight: FontWeight.bold);
