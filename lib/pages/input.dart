@@ -14,7 +14,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color maleCardColor = inactiveCardColor;
   Color femaleCardColor = inactiveCardColor;
-
+  int gender;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +33,7 @@ class _InputPageState extends State<InputPage> {
                       setState(() {
                         maleCardColor=activeCardColor;
                         femaleCardColor=inactiveCardColor;
+                        gender=0;
                       });
                     },
                     child: BMICard(
@@ -50,6 +51,7 @@ class _InputPageState extends State<InputPage> {
                       setState(() {
                         maleCardColor=inactiveCardColor;
                         femaleCardColor=activeCardColor;
+                        gender=1;
                       });
                     },
                                       child: BMICard(
