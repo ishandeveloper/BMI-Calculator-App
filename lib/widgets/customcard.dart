@@ -4,7 +4,7 @@ class BMICard extends StatelessWidget {
   // const BMICard({
   //   Key key,
   // }) : super(key: key);
-  BMICard({this.colour});
+  BMICard({@required this.colour});
   final Color colour;
 
 
