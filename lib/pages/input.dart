@@ -11,12 +11,29 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  int height=150;
+  int height = 150;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              'BMI CALCULATOR',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              'by ishandeveloper',
+              style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w200,
+                  fontSize: 11),
+            )
+          ],
+        ),
         elevation: 0,
       ),
       body: Column(
@@ -81,15 +98,24 @@ class _InputPageState extends State<InputPage> {
                       )
                     ],
                   ),
-                  Slider(onChanged: (val){
-                    setState(() {
-                      height=val.toInt();
-                    });
-                  },
-                  min: 60,
-                  value:height.toDouble(),
-                  max: 240,
-                  activeColor: Colors.yellow,
+                  SliderTheme(
+                    data: SliderThemeData(
+                      thumbShape: RoundSliderThumbShape(
+                        enabledThumbRadius: 15,
+                        disabledThumbRadius: 10,
+                      ),
+                    ),
+                    child: Slider(
+                      onChanged: (val) {
+                        setState(() {
+                          height = val.toInt();
+                        });
+                      },
+                      min: 60,
+                      value: height.toDouble(),
+                      max: 240,
+                      activeColor: Colors.yellow,
+                    ),
                   )
                 ],
               ),
