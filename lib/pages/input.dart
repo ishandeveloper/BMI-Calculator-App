@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/pages/about.dart';
 import 'package:bmi_calculator/widgets/buttons.dart';
 import 'package:bmi_calculator/widgets/cardiconcontent.dart';
 import 'package:bmi_calculator/widgets/customcard.dart';
@@ -42,6 +43,11 @@ class _InputPageState extends State<InputPage> {
           Container(
             margin: EdgeInsets.only(right: 20),
             child: GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return AboutPage();
+                }));
+              },
               child: Icon(Icons.info),
             ),
           )
