@@ -6,6 +6,7 @@ import 'package:bmi_calculator/widgets/customcard.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../constants.dart';
+import 'package:bmi_calculator/calculations.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -232,7 +233,8 @@ class _InputPageState extends State<InputPage> {
                           fontWeight: FontWeight.w300),
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AnalysisPage(bmiValue: 19,)));
+                      Calculations calc=Calculations(height: height,weight: weight);
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AnalysisPage(bmiValue: calc.calculateBMI(),bmiComment: calc.getResult(),)));
                     },
                     color: Colors.yellow[500],
                     height: MediaQuery.of(context).size.height * 0.095,
