@@ -6,10 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 const activeCardColor = Color(0xFF1D1E33);
 const inactiveCardColor = Color(0xFF111328);
 
-enum Gender{
-  male,
-  female
-}
+enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
   @override
@@ -31,35 +28,30 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                       
-                        selectedGender = Gender.male;
-                      });
-                    },
-                    child: BMICard(
-                      colour: selectedGender==Gender.male?activeCardColor:inactiveCardColor,
-                      cardChild: CardIconContent(
-                        cardicon: FontAwesomeIcons.mars,
-                        cardtext: 'MALE',
-                      ),
+                  child: BMICard(
+                    pressed: () => setState(() {
+                      selectedGender = Gender.male;
+                    }),
+                    colour: selectedGender == Gender.male
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    cardChild: CardIconContent(
+                      cardicon: FontAwesomeIcons.mars,
+                      cardtext: 'MALE',
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedGender = Gender.female;
-                      });
-                    },
-                    child: BMICard(
-                      colour: selectedGender==Gender.female?activeCardColor:inactiveCardColor,
-                      cardChild: CardIconContent(
-                        cardicon: FontAwesomeIcons.venus,
-                        cardtext: 'FEMALE',
-                      ),
+                  child: BMICard(
+                    pressed: () => setState(() {
+                      selectedGender = Gender.female;
+                    }),
+                    colour: selectedGender == Gender.female
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    cardChild: CardIconContent(
+                      cardicon: FontAwesomeIcons.venus,
+                      cardtext: 'FEMALE',
                     ),
                   ),
                 ),
